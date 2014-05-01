@@ -1,5 +1,5 @@
 {
-	"name":"bluedogtraining/ruckusing-migrations",
+	"name":"bdt/ruckusing-migrations",
 	"description":"Framework for generating and managing database migrations",
 	"authors":[
 		{
