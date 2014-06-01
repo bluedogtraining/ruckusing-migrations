@@ -626,11 +626,11 @@ class Ruckusing_MySQLAdapter extends Ruckusing_BaseAdapter implements Ruckusing_
       $this->db_info = $db_info;
       //we might have a port
       if(!empty($db_info['port'])) {
-        $host = $db_info['host'] . ':' . $db_info['port'];
+        $port = (int)$db_info['port'];
       } else {
-        $host = $db_info['host'];
+        $port = null;
       }
-      $this->conn = mysqli_connect($host, $db_info['user'], $db_info['password']);
+      $this->conn = mysqli_connect($db_info['host'], $db_info['user'], $db_info['password'], '', $port);
       if(!$this->conn) {
         die("\n\nCould not connect to the DB, check host / user / password\n\n");
       }
